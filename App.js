@@ -1,17 +1,20 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import SeacrhScreen from "./src/screens/SearchScreen";
-import ResultShowScreen from "./src/screens/ResultShowScreen";
+
+import SearchScreen from "./src/screens/SearchScreen";
+import ResultsShowScreen from "./src/screens/ResultsShowScreen";
+
 const navigator = createStackNavigator(
 	{
-		Seacrh: SeacrhScreen,
-		ResultShow: ResultShowScreen,
+		Search: SearchScreen,
+		ResultsShow: ResultsShowScreen,
 	},
 	{
-		initialRouteName: "Seacrh",
+		initialRouteName: "Search",
 		defaultNavigationOptions: {
-			title: "BusinessSearch",
+			title: "Business Search",
 		},
 	}
 );
+
 export default createAppContainer(navigator);

@@ -6,6 +6,7 @@ export default () => {
 	const [errorMessage, setErrorMessage] = useState("");
 
 	const searchApi = async (searchTerm) => {
+		console.log("Hi there!");
 		try {
 			const response = await yelp.get("/search", {
 				params: {
@@ -19,6 +20,10 @@ export default () => {
 			setErrorMessage("Something went wrong");
 		}
 	};
+
+	// Call searchApi when component
+	// is first rendered.  BAD CODE!
+	// searchApi('pasta');
 	useEffect(() => {
 		searchApi("pasta");
 	}, []);
